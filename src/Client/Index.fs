@@ -282,6 +282,10 @@ let locationDisplay (lr: LocationResponse) =
 let adjective idx =
     match idx+1 with
     | 1 -> "First"
+    | 2 -> "Second"
+    | 3 -> "Third"
+    | 4 -> "Fourth"
+    | 5 -> "Fifth"
     | n -> string n + "th"
 
 let destinationEntrySection idx (destination: Destination) dispatch =
