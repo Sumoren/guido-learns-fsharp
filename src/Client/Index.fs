@@ -429,6 +429,11 @@ let destinationInfoSection idx (model: Destination) =
                         //     Add a second column containing the weather information.
                         //     Create this using weatherDisplay, which takes a WeatherResponse
                         //     This can be found in the overall server response.
+                        column [
+                            prop.children [
+                                weatherDisplay response.Weather
+                            ]
+                        ]
                     ]
                     // Task 2.1
                     //   Problem - we would like to add maps for each stop
