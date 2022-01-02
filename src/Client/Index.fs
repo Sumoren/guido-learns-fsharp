@@ -248,7 +248,7 @@ let weatherDisplay (wr: WeatherResponse) =
                         th "Temp"
                         // Task 3.3 Fill in the temperature, the right number is
                         //          available in the WeatherResponse
-                        td $"%.1f{3.00000}"
+                        td $"%.1f{wr.AverageTemperature}"
                     ]
                 ]
             ]
