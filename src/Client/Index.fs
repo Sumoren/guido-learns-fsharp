@@ -429,6 +429,7 @@ let destinationInfoSection idx (model: Destination) =
                     //   Approach:
                     //     Add the map widget, created using "mapDisplay".
                     //     This takes a LocationResponse, found in the overall server response *)
+                    mapDisplay response.Location
                 ]
             ]
         ]
