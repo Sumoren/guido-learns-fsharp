@@ -214,6 +214,7 @@ let mapDisplay (lr: LocationResponse) =
         //    Set the center of the map.
         //    Use the 'map.center' function and supply the lat/long value as input.
         //    These come from the LocationResponse.
+        map.center (lr.Location.LatLong.Latitude, lr.Location.LatLong.Longitude)
 
         // Task 2.3 Update the Zoom to 15.
         map.zoom 12
