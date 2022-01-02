@@ -373,29 +373,29 @@ let destinationEntrySection idx (destination: Destination) dispatch =
                 //   Add a trash icon by uncommenting the code below
                 //   Select, then Edit --> Toggle Line Comment
 
-                // control.div [
-                //     button.a [
-                //         prop.children [
-                //             icon [
-                //                 icon.isRight
-                //                 prop.children [
-                //                     i [ prop.className "fas fa-trash"]
-                //                 ]
-                //             ]
-                //         ]
-                //         if destination.Text = "" then
-                //             prop.disabled true
-                //
-                //         // Task 4.2a
-                //         //    Problem: the trash icon does the wrong thing!
-                //         //    Task:
-                //         //       Adjust to dispatch a new 'RemoveDestination' message
-                //         //       The message kind is not  defined, add it first then
-                //         //       come back here.
-                //         prop.onClick (fun _ -> GetDestination idx |> dispatch)
+                control.div [
+                    button.a [
+                        prop.children [
+                            icon [
+                                icon.isRight
+                                prop.children [
+                                    i [ prop.className "fas fa-trash"]
+                                ]
+                            ]
+                        ]
+                        if destination.Text = "" then
+                            prop.disabled true
 
-                //     ]
-                // ]
+                        // Task 4.2a
+                        //    Problem: the trash icon does the wrong thing!
+                        //    Task:
+                        //       Adjust to dispatch a new 'RemoveDestination' message
+                        //       The message kind is not  defined, add it first then
+                        //       come back here.
+                        prop.onClick (fun _ -> GetDestination idx |> dispatch)
+
+                    ]
+                ]
 
             ]
         ]
