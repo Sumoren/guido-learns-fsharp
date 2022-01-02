@@ -269,7 +269,7 @@ let locationDisplay (lr: LocationResponse) =
                     //   Heathrow is on plague island! Don't fly there!
                     //   Change Heathrow to Schiphol!
                     //   Then search for DistanceToAirport and find where it's calculated
-                    th "Distance to Heathrow"
+                    th "Distance to Schiphol"
                     td $"%.2f{lr.DistanceToAirport}km"
                 ]
             ]
@@ -346,7 +346,7 @@ let destinationEntrySection idx (destination: Destination) dispatch =
                                  //   Try an incorrect postcode. The color of the
                                  //   help text is wrong!!
                                  //   Correct this to color.isDanger
-                                 color.isPrimary
+                                 color.isDanger
                                  prop.text error
                         ]
                     ]
