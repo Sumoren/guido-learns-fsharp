@@ -217,7 +217,7 @@ let mapDisplay (lr: LocationResponse) =
         map.center (lr.Location.LatLong.Latitude, lr.Location.LatLong.Longitude)
 
         // Task 2.3 Update the Zoom to 15.
-        map.zoom 12
+        map.zoom 15
         map.height 500
         map.markers [
             // Task 2.4 Create a marker for the map. Use the makeMarker function above.
