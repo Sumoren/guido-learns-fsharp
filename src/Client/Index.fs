@@ -21,6 +21,7 @@ type ServerResponse =
       Location: LocationResponse
       // Task 3.1b When we fetch data from the server, also get the weather
       //           Add a 'Weather' field here of type 'WeatherResponse'
+      Weather: WeatherResponse
     }
 
 type ServerState =
@@ -97,12 +98,14 @@ let getResponse destinationText = async {
      //   Use 'let! weather = ... GetWeather' here.
      //   The call is asynchronous, so you'll need to use 'let!' to
      //   await the result of the call.
+    let! weather = dojoApi.GetWeather destinationText
     let response =
         {
           Location = location
           // Task 3.1c
           //   Return the weather as part of the overall response
           //   Use 'Weather = weather' like 'Location = location'
+          Weather = weather
         }
     return response }
 
