@@ -79,6 +79,7 @@ type Msg =
     | GotDestination of DestinationIndex * ServerResponse
     | ErrorMsg of DestinationIndex * exn
     // Task 4.2b Add a new message RemoveDestination carrying a destination number
+    | RemoveDestination of DestinationIndex
 
 
 /// The init function is called to start the message pump with an initial view.
@@ -137,6 +138,9 @@ let update msg (model: Model) =
     //   Copy the code for GotDestination
     //   You can call model.RemoveDestination to generate a new model
     //   with the element removed
+    | RemoveDestination idx->
+        let model = model.RemoveDestination idx
+        model, Cmd.none
 
     | TextChanged (idx, p) ->
         let destination = model.GetDestination idx
@@ -392,7 +396,7 @@ let destinationEntrySection idx (destination: Destination) dispatch =
                         //       Adjust to dispatch a new 'RemoveDestination' message
                         //       The message kind is not  defined, add it first then
                         //       come back here.
-                        prop.onClick (fun _ -> GetDestination idx |> dispatch)
+                        prop.onClick (fun _ -> RemoveDestination idx |> dispatch)
 
                     ]
                 ]
